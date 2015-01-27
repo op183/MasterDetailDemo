@@ -65,7 +65,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             if let detailView = svc.viewControllers[svc.viewControllers.count-1] as? UINavigationController {
                 DetailViewController.Static.backButton = barButtonItem
                 detailView.topViewController.navigationItem.leftBarButtonItem = barButtonItem
-                println("wullHide")
             }
         }
     }
@@ -76,7 +75,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             if let detailView = svc.viewControllers[svc.viewControllers.count-1] as? UINavigationController {
                 DetailViewController.Static.backButton = nil
                 detailView.topViewController.navigationItem.leftBarButtonItem = nil
-                println("willShow")
             }
         }
     }
