@@ -16,10 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        let splitViewController = self.window!.rootViewController as UISplitViewController
-        let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as UINavigationController
-        navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
-        splitViewController.delegate = self
+        if let splitViewController = self.window!.rootViewController  as? UISplitViewController {
+            splitViewController.delegate = self
+        }
         return true
     }
 
@@ -47,6 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
     // MARK: - Split view
 
+    /*
     func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController:UIViewController!, ontoPrimaryViewController primaryViewController:UIViewController!) -> Bool {
         if let secondaryAsNavController = secondaryViewController as? UINavigationController {
             if let topAsDetailController = secondaryAsNavController.topViewController as? DetailViewController {
@@ -58,6 +58,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         }
         return false
     }
-
+*/
+    
+    func splitViewController(svc: UISplitViewController, willHideViewController aViewController: UIViewController, withBarButtonItem barButtonItem: UIBarButtonItem, forPopoverController pc: UIPopoverController) {
+        if (!svc.respondsToSelector(Selector("displayModeButtonItem"))) {
+            if let detailView = svc.viewControllers[svc.viewControllers.count-1] as? UINavigationController {
+                DetailViewController.Static.backButton = barButtonItem
+                detailView.topViewController.navigationItem.leftBarButtonItem = barButtonItem
+                println("wullHide")
+            }
+        }
+    }
+    
+    
+    func splitViewController(svc: UISplitViewController!, willShowViewController aViewController: UIViewController!, invalidatingBarButtonItem barButtonItem: UIBarButtonItem!) {
+        if (!svc.respondsToSelector(Selector("displayModeButtonItem"))) {
+            if let detailView = svc.viewControllers[svc.viewControllers.count-1] as? UINavigationController {
+                DetailViewController.Static.backButton = nil
+                detailView.topViewController.navigationItem.leftBarButtonItem = nil
+                println("willShow")
+            }
+        }
+    }
+    
 }
 

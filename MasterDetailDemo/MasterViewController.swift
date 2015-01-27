@@ -10,9 +10,7 @@ import UIKit
 
 class MasterViewController: UITableViewController {
 
-    var detailViewController: DetailViewController? = nil
     var objects = NSMutableArray()
-
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,10 +27,6 @@ class MasterViewController: UITableViewController {
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
         self.navigationItem.rightBarButtonItem = addButton
-        if let split = self.splitViewController {
-            let controllers = split.viewControllers
-            self.detailViewController = controllers[controllers.count-1].topViewController as? DetailViewController
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,11 +45,20 @@ class MasterViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
-                let object = objects[indexPath.row] as NSDate
-                let controller = (segue.destinationViewController as UINavigationController).topViewController as DetailViewController
-                controller.detailItem = object
-                controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
-                controller.navigationItem.leftItemsSupplementBackButton = true
+                let object = objects[indexPath.row] as NSDate                
+                if let navController = (segue.destinationViewController as? UINavigationController) {
+                    let controller = navController.topViewController as DetailViewController
+                    controller.detailItem = object
+                    if (splitViewController?.respondsToSelector(Selector("displayModeButtonItem")) == true) {
+                        let button = splitViewController?.displayModeButtonItem()
+                        controller.navigationItem.leftBarButtonItem = button
+                    } else {
+                        controller.navigationItem.leftBarButtonItem = DetailViewController.Static.backButton
+                    }
+                    controller.navigationItem.leftItemsSupplementBackButton = true
+                } else {
+                    (segue.destinationViewController as DetailViewController).detailItem = object
+                }
             }
         }
     }

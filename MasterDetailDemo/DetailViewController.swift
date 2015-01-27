@@ -9,7 +9,10 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    struct Static  {
+        static var backButton: UIBarButtonItem? = nil
+    }
+    
     @IBOutlet weak var detailDescriptionLabel: UILabel!
 
 
@@ -25,6 +28,7 @@ class DetailViewController: UIViewController {
         if let detail: AnyObject = self.detailItem {
             if let label = self.detailDescriptionLabel {
                 label.text = detail.description
+                //println("det: \(self)")
             }
         }
     }
