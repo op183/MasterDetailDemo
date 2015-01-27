@@ -49,14 +49,19 @@ class MasterViewController: UITableViewController {
                 if let navController = (segue.destinationViewController as? UINavigationController) {
                     let controller = navController.topViewController as DetailViewController
                     controller.detailItem = object
+                    
+                    // workaround for ios7 on iPad
                     if (splitViewController?.respondsToSelector(Selector("displayModeButtonItem")) == true) {
                         let button = splitViewController?.displayModeButtonItem()
                         controller.navigationItem.leftBarButtonItem = button
                     } else {
                         controller.navigationItem.leftBarButtonItem = DetailViewController.Static.backButton
                     }
+                    
                     controller.navigationItem.leftItemsSupplementBackButton = true
                 } else {
+                    
+                    // workaround for ios7 on iPhone
                     (segue.destinationViewController as DetailViewController).detailItem = object
                 }
             }
