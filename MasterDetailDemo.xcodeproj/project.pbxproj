@@ -14,6 +14,7 @@
 		4D91D2231A76537400655085 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D91D2221A76537400655085 /* Images.xcassets */; };
 		4D91D2261A76537400655085 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D91D2241A76537400655085 /* LaunchScreen.xib */; };
 		4D91D2321A76537400655085 /* MasterDetailDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D91D2311A76537400655085 /* MasterDetailDemoTests.swift */; };
+		4D91D26C1A79620C00655085 /* SplitViewSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D91D26B1A79620C00655085 /* SplitViewSupport.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		4D91D22B1A76537400655085 /* MasterDetailDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MasterDetailDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D91D2301A76537400655085 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D91D2311A76537400655085 /* MasterDetailDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterDetailDemoTests.swift; sourceTree = "<group>"; };
+		4D91D26B1A79620C00655085 /* SplitViewSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewSupport.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				4D91D2221A76537400655085 /* Images.xcassets */,
 				4D91D2241A76537400655085 /* LaunchScreen.xib */,
 				4D91D2171A76537400655085 /* Supporting Files */,
+				4D91D26B1A79620C00655085 /* SplitViewSupport.swift */,
 			);
 			path = MasterDetailDemo;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D91D21E1A76537400655085 /* DetailViewController.swift in Sources */,
+				4D91D26C1A79620C00655085 /* SplitViewSupport.swift in Sources */,
 				4D91D21C1A76537400655085 /* MasterViewController.swift in Sources */,
 				4D91D21A1A76537400655085 /* AppDelegate.swift in Sources */,
 			);
@@ -276,7 +280,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -319,7 +324,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "-";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "-";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -415,6 +421,7 @@
 				4D91D2371A76537400655085 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4D91D2381A76537400655085 /* Build configuration list for PBXNativeTarget "MasterDetailDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +430,7 @@
 				4D91D23A1A76537400655085 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

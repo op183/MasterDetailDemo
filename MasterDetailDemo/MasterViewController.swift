@@ -24,7 +24,6 @@ class MasterViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
-
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
         self.navigationItem.rightBarButtonItem = addButton
     }
@@ -49,19 +48,11 @@ class MasterViewController: UITableViewController {
                 if let navController = (segue.destinationViewController as? UINavigationController) {
                     let controller = navController.topViewController as DetailViewController
                     controller.detailItem = object
-                    
-                    // workaround for ios7 on iPad
-                    if (splitViewController?.respondsToSelector(Selector("displayModeButtonItem")) == true) {
-                        let button = splitViewController?.displayModeButtonItem()
-                        controller.navigationItem.leftBarButtonItem = button
-                    } else {
-                        controller.navigationItem.leftBarButtonItem = DetailViewController.Static.backButton
-                    }
-                    
+                    controller.navigationItem.leftBarButtonItem = splitViewController?.backBarButtonItem
                     controller.navigationItem.leftItemsSupplementBackButton = true
                 } else {
                     
-                    // workaround for ios7 on iPhone
+                    // iPhone ios7support
                     (segue.destinationViewController as DetailViewController).detailItem = object
                 }
             }

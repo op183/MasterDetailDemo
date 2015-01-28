@@ -9,25 +9,20 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        // MARK: - support for all devices ios8 and iPad ios7
+        // MARK: - support for all ios8 devices and iPad ios7
+        // on iPhone and iod7 splitViewControler is NOT available
         
         if let splitViewController = self.window!.rootViewController  as? UISplitViewController {
-            splitViewController.delegate = self
-            
-            // MARK: - on ios7 displayModeButon() is not imlemented, we should inplement workaround in splitview delegate
-            
-            if (splitViewController.respondsToSelector(Selector("displayModeButtonItem")) == true) {
-                let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as UINavigationController
-                navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
-            }
+            splitViewController.delegate = splitViewController
+            let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as UINavigationController
+            navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.backBarButtonItem
         }
         return true
     }
@@ -54,41 +49,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    // MARK: - Split view
-    
-    func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController:UIViewController!, ontoPrimaryViewController primaryViewController:UIViewController!) -> Bool {
-        println("splitview")
-        if let secondaryAsNavController = secondaryViewController as? UINavigationController {
-            if let topAsDetailController = secondaryAsNavController.topViewController as? DetailViewController {
-                if topAsDetailController.detailItem == nil {
-                    // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
-                    return true
-                }
-            }
-        }
-        return false
-    }
-
-    // MARK: - support for ios7 on iPad, mimic displayModeButtonItem(), static UIButtonItem required 
-    
-    func splitViewController(svc: UISplitViewController, willHideViewController aViewController: UIViewController, withBarButtonItem barButtonItem: UIBarButtonItem, forPopoverController pc: UIPopoverController) {
-        if (!svc.respondsToSelector(Selector("displayModeButtonItem"))) {
-            if let detailView = svc.viewControllers[svc.viewControllers.count-1] as? UINavigationController {
-                DetailViewController.Static.backButton = barButtonItem
-                detailView.topViewController.navigationItem.leftBarButtonItem = barButtonItem
-            }
-        }
-    }
-    
-    
-    func splitViewController(svc: UISplitViewController!, willShowViewController aViewController: UIViewController!, invalidatingBarButtonItem barButtonItem: UIBarButtonItem!) {
-        if (!svc.respondsToSelector(Selector("displayModeButtonItem"))) {
-            if let detailView = svc.viewControllers[svc.viewControllers.count-1] as? UINavigationController {
-                DetailViewController.Static.backButton = nil
-                detailView.topViewController.navigationItem.leftBarButtonItem = nil
-            }
-        }
-    }
     
 }
 

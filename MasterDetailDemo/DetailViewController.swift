@@ -10,10 +10,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    // MARK: - support for ios7 on ipad
-    struct Static  {
-        static var backButton: UIBarButtonItem? = nil
-    }
+    
     
     
     @IBOutlet weak var detailDescriptionLabel: UILabel!
