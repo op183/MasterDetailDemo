@@ -13,19 +13,8 @@
 		4D91D2211A76537400655085 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D91D21F1A76537400655085 /* Main.storyboard */; };
 		4D91D2231A76537400655085 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D91D2221A76537400655085 /* Images.xcassets */; };
 		4D91D2261A76537400655085 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D91D2241A76537400655085 /* LaunchScreen.xib */; };
-		4D91D2321A76537400655085 /* MasterDetailDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D91D2311A76537400655085 /* MasterDetailDemoTests.swift */; };
 		4D91D26C1A79620C00655085 /* SplitViewSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D91D26B1A79620C00655085 /* SplitViewSupport.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		4D91D22C1A76537400655085 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4D91D20C1A76537400655085 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4D91D2131A76537400655085;
-			remoteInfo = MasterDetailDemo;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4D91D2141A76537400655085 /* MasterDetailDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MasterDetailDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,21 +25,11 @@
 		4D91D2201A76537400655085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4D91D2221A76537400655085 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4D91D2251A76537400655085 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		4D91D22B1A76537400655085 /* MasterDetailDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MasterDetailDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4D91D2301A76537400655085 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4D91D2311A76537400655085 /* MasterDetailDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterDetailDemoTests.swift; sourceTree = "<group>"; };
 		4D91D26B1A79620C00655085 /* SplitViewSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewSupport.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4D91D2111A76537400655085 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4D91D2281A76537400655085 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -64,7 +43,6 @@
 			isa = PBXGroup;
 			children = (
 				4D91D2161A76537400655085 /* MasterDetailDemo */,
-				4D91D22E1A76537400655085 /* MasterDetailDemoTests */,
 				4D91D2151A76537400655085 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,7 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				4D91D2141A76537400655085 /* MasterDetailDemo.app */,
-				4D91D22B1A76537400655085 /* MasterDetailDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,23 +78,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4D91D22E1A76537400655085 /* MasterDetailDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				4D91D2311A76537400655085 /* MasterDetailDemoTests.swift */,
-				4D91D22F1A76537400655085 /* Supporting Files */,
-			);
-			path = MasterDetailDemoTests;
-			sourceTree = "<group>";
-		};
-		4D91D22F1A76537400655085 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				4D91D2301A76537400655085 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,24 +98,6 @@
 			productReference = 4D91D2141A76537400655085 /* MasterDetailDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		4D91D22A1A76537400655085 /* MasterDetailDemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4D91D2381A76537400655085 /* Build configuration list for PBXNativeTarget "MasterDetailDemoTests" */;
-			buildPhases = (
-				4D91D2271A76537400655085 /* Sources */,
-				4D91D2281A76537400655085 /* Frameworks */,
-				4D91D2291A76537400655085 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4D91D22D1A76537400655085 /* PBXTargetDependency */,
-			);
-			name = MasterDetailDemoTests;
-			productName = MasterDetailDemoTests;
-			productReference = 4D91D22B1A76537400655085 /* MasterDetailDemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -167,10 +109,6 @@
 				TargetAttributes = {
 					4D91D2131A76537400655085 = {
 						CreatedOnToolsVersion = 6.1.1;
-					};
-					4D91D22A1A76537400655085 = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = 4D91D2131A76537400655085;
 					};
 				};
 			};
@@ -188,7 +126,6 @@
 			projectRoot = "";
 			targets = (
 				4D91D2131A76537400655085 /* MasterDetailDemo */,
-				4D91D22A1A76537400655085 /* MasterDetailDemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -201,13 +138,6 @@
 				4D91D2211A76537400655085 /* Main.storyboard in Resources */,
 				4D91D2261A76537400655085 /* LaunchScreen.xib in Resources */,
 				4D91D2231A76537400655085 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4D91D2291A76537400655085 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,23 +155,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4D91D2271A76537400655085 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4D91D2321A76537400655085 /* MasterDetailDemoTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		4D91D22D1A76537400655085 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4D91D2131A76537400655085 /* MasterDetailDemo */;
-			targetProxy = 4D91D22C1A76537400655085 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4D91D21F1A76537400655085 /* Main.storyboard */ = {
@@ -368,40 +282,6 @@
 			};
 			name = Release;
 		};
-		4D91D2391A76537400655085 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MasterDetailDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MasterDetailDemo.app/MasterDetailDemo";
-			};
-			name = Debug;
-		};
-		4D91D23A1A76537400655085 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MasterDetailDemoTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MasterDetailDemo.app/MasterDetailDemo";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -419,15 +299,6 @@
 			buildConfigurations = (
 				4D91D2361A76537400655085 /* Debug */,
 				4D91D2371A76537400655085 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		4D91D2381A76537400655085 /* Build configuration list for PBXNativeTarget "MasterDetailDemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4D91D2391A76537400655085 /* Debug */,
-				4D91D23A1A76537400655085 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
