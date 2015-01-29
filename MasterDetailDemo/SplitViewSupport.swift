@@ -11,13 +11,16 @@ import UIKit
 // MARK: - iPad ios7support
 
 extension UISplitViewController: UISplitViewControllerDelegate {
+    
     struct ios7Support {
         static var modeButtonItem: UIBarButtonItem?
     }
+    
     var backBarButtonItem: UIBarButtonItem? {
         get {
             if respondsToSelector(Selector("displayModeButtonItem")) == true {
-                return displayModeButtonItem()
+                let button: UIBarButtonItem = displayModeButtonItem()
+                return button
             } else {
                 return ios7Support.modeButtonItem
             }
@@ -25,6 +28,10 @@ extension UISplitViewController: UISplitViewControllerDelegate {
         set {
             ios7Support.modeButtonItem = newValue
         }
+    }
+    
+    func displayModeButtonItem(_: Bool = true)->UIBarButtonItem? {
+        return backBarButtonItem
     }
     
     public func splitViewController(svc: UISplitViewController, willHideViewController aViewController: UIViewController, withBarButtonItem barButtonItem: UIBarButtonItem, forPopoverController pc: UIPopoverController) {

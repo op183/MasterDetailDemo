@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let splitViewController = self.window!.rootViewController  as? UISplitViewController {
             splitViewController.delegate = splitViewController
             let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as UINavigationController
-            navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.backBarButtonItem
+            navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
         }
         return true
     }
