@@ -16,7 +16,7 @@ class MasterViewController: UITableViewController {
         super.awakeFromNib()
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
             self.clearsSelectionOnViewWillAppear = false
-            self.preferredContentSize = CGSize(width: 320.0, height: 600.0)
+            //self.preferredContentSize = CGSize(width: 220.0, height: 600.0)
         }
     }
 
@@ -26,7 +26,8 @@ class MasterViewController: UITableViewController {
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
         self.navigationItem.rightBarButtonItem = addButton
-    }
+        
+}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -62,8 +62,8 @@
 				4D91D21B1A76537400655085 /* MasterViewController.swift */,
 				4D91D21D1A76537400655085 /* DetailViewController.swift */,
 				4D91D21F1A76537400655085 /* Main.storyboard */,
-				4D91D2221A76537400655085 /* Images.xcassets */,
 				4D91D2241A76537400655085 /* LaunchScreen.xib */,
+				4D91D2221A76537400655085 /* Images.xcassets */,
 				4D91D2171A76537400655085 /* Supporting Files */,
 				4D91D26B1A79620C00655085 /* SplitViewSupport.swift */,
 			);

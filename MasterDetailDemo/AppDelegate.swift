@@ -20,10 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // on iPhone and iod7 splitViewControler is NOT available
         
         if let splitViewController = self.window!.rootViewController  as? UISplitViewController {
-            splitViewController.delegate = splitViewController
+            splitViewController.delegate = splitViewController            
             let navigationController = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as UINavigationController
             navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem()
+            navigationController.topViewController.navigationItem.leftItemsSupplementBackButton = true
         }
+        window?.tintColor = UIColor.redColor()
         return true
     }
 
