@@ -36,7 +36,7 @@ class MasterViewController: UITableViewController {
 
     func insertNewObject(sender: AnyObject) {
         var text: String = "line 0"
-        for i in 0...(random() % 4) {
+        for i in 0..<(arc4random_uniform(4)) {
             text += "\nline \(i + 1)"
         }
         objects.insertObject(text, atIndex: 0)
