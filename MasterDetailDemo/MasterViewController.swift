@@ -35,7 +35,11 @@ class MasterViewController: UITableViewController {
     }
 
     func insertNewObject(sender: AnyObject) {
-        objects.insertObject(NSDate(), atIndex: 0)
+        var text: String = "line 0"
+        for i in 0...(random() % 4) {
+            text += "\nline \(i + 1)"
+        }
+        objects.insertObject(text, atIndex: 0)
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }
@@ -45,7 +49,7 @@ class MasterViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
-                let object = objects[indexPath.row] as NSDate                
+                let object = objects[indexPath.row] as String
                 if let navController = (segue.destinationViewController as? UINavigationController) {
                     let controller = navController.topViewController as DetailViewController
                     controller.detailItem = object
@@ -73,8 +77,8 @@ class MasterViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
 
-        let object = objects[indexPath.row] as NSDate
-        cell.textLabel!.text = object.description
+        let object = objects[indexPath.row] as String
+        cell.textLabel!.text = object
         return cell
     }
 
@@ -91,7 +95,15 @@ class MasterViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
-
-
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell
+        let object = objects[indexPath.row] as String
+        let h0 = cell.textLabel?.bounds.height
+        cell.textLabel!.text = object
+        let h1 = cell.textLabel?.sizeThatFits(CGSize(width: cell.bounds.width, height: CGFloat.max)).height
+        cell.contentView.frame.size.height += h1! - h0!
+        return cell.contentView.bounds.height
+    }
 }
 
